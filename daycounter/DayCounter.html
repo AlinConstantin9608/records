@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+
+<html lang="RO-ro">
+
+<!-- versiunea 1.0 -->
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-control" content="no-cache">
+<meta name="author" content="Barbulescu Alin-Constantin">
+
+
+<title>DayCounter</title>
+
+
+<style>
+
+
+
+body {
+
+	background-color: #302828;
+	color: white;
+	font-family: sans-serif;
+}
+
+
+#title {
+
+	width: 100%;
+	text-align: center;
+	font-family: sans-serif;
+	background-color: purple;
+	margin-top: 0;
+}
+
+#box {
+
+	position: absolute;
+	top: 20%;
+	left: 35%;
+	box-shadow: 2px 2px 2px purple;
+	padding: 10px;
+}
+
+@media screen and (max-width: 840px) {
+
+	#box {
+	
+		left: 5%;
+	
+	}
+
+}
+
+#time {
+	
+	padding: 10px;
+	width: 300px;
+}
+
+button {
+	
+	padding: 10px;
+	margin-top: 15px;
+	background-color: purple;
+	font-family: verdana;
+	color: white;
+	border: 1px solid transparent;
+	border-radius: 3%;
+
+}
+
+button:hover {
+		
+	cursor: pointer;
+	background-color: #660066;
+	border-radius: 5%;	
+}
+
+#show {
+	
+	
+	display: none;
+	width: 140px;
+	height: 140px;
+	border: 2px dotted;
+	justify-content: center;
+	border-radius: 50%;
+	position: relative;
+	top: 30%;
+	left: 25%;
+	animation: show 5s infinite;
+}
+
+ @keyframes show {
+
+	from{border: 2px dotted;}
+	to{border: 3px solid purple;}
+
+}
+
+#result {
+
+	height: 30px;
+
+}
+
+h1 {
+
+	font-family: sans-serif;
+	color: white;
+	width: 100%;
+	text-align: center;
+}
+
+#countdown {
+
+	font-size: 30px;
+	color: white;
+	width: 100%;
+	text-align: center;
+	margin-top: 45px;
+}
+
+p {
+
+position: absolute;
+bottom: 0;
+right: 1%;
+font-family: sans-serif;
+}
+
+
+
+</style>
+</head>
+<body>
+<h1 id="title">Calculator Zile</h1>
+<div id="box">
+<h1>Alege data </h1>
+<input type="date"  id="time"><br>
+<button  onclick="day()">Calculeaza</button>
+<h1 id="result" ></h1>
+<div id="show">
+<h1 id="countdown"></h1>
+</div>
+
+</div>
+
+<script>
+
+
+function day() {
+	
+var x = document.getElementById('time').value;
+
+
+var end = new Date(x);
+
+	var _second = 1000;
+    var _minute = _second * 60;
+    var _hour = _minute * 60;
+    var _day = _hour * 24;
+	var _week = _day * 7;
+	var _mounth = _week * 4;
+	var _year = _mounth * 12;
+	
+    var timer;	
+        var now = new Date();
+        var distance = end - now;
+	
+	
+	
+         if(distance <  0) {
+	
+            var distance = now - end;
+		
+		
+			var days = Math.floor(distance / _day);
+
+			document.getElementById('countdown').innerHTML =  days;
+	
+			 document.getElementById('result').innerHTML = "Au trecut:";
+			
+			document.getElementById('show').style.display = "block";	
+            return;
+ 
+// .toLocaleString() adauga asta dupa days cand arata minute sau secunde ca sa ai separator; 
+}
+
+ if(distance > 0) {
+		
+        var days = Math.floor(distance / _day)+1;
+
+        document.getElementById('countdown').innerHTML = days;
+     
+		document.getElementById('result').innerHTML = "Mai sunt:";
+		
+		document.getElementById('show').style.display = "block";
+
+
+
+}
+
+
+
+
+timer = setInterval(day(), 2000);
+		
+
+}
+
+
+</script>
+
+
+</body>
+</html>

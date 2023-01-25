@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<head>
+<title>Arata un obliect la o data anume </title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-control" content="no-cache">
+<meta name="author" content="Barbulescu Alin-Constantin">
+<style>
+
+body {
+	
+	background-color: black;
+	color: white;
+	font-size: 19px;
+}
+
+
+</style>
+</head>
+
+<body onload="date()">
+
+
+<p id="hello"></p>
+
+<script>
+
+function date() {
+
+var d = new Date();
+
+var day = d.getDate();
+
+var m = d.getMonth();
+
+if(day ==  22  && m  ==  7) {
+
+	document.getElementById('hello').innerHTML = "La multi ani! Este ziua ta!";
+
+}else {
+
+	document.getElementById('hello').innerHTML = "Mai este pana la ziua ta ... :(";
+
+}
+
+
+}
+
+
+</script>
+</body>
+
+</htmL>

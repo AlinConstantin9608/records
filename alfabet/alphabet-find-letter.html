@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ro-RO">
+
+
+<head>
+
+<meta name="author" content="Barbulescu Alin Constantin">
+<meta charset="UTF-8">
+<meta http-equiv="Cache-control" content="no-cache">
+<title> Alphabet find letter  </title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<style>
+
+
+* {
+
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+
+h1 {
+
+	width: 100%;
+	text-align: center;	
+	font-family: 'Courier New', Courier, monospace;
+	padding: 5px;
+}
+
+
+.box {
+
+	display: flex;
+	flex-direction: row wrap;
+	padding: 10px;
+	margin-top: 25px;
+}
+
+
+button {
+
+	padding: 8px;
+	background-color: cornflowerblue;
+	color: white;
+	border-radius: 3%;
+	border: none;
+	cursor: pointer;
+
+}
+
+
+
+.item {
+
+	flex: 5px;
+	height: 100px;
+	padding: 8px;
+	margin-top: 10px;
+
+}
+
+
+@media screen and (max-width: 840px) {
+
+	.box {
+
+		flex-direction: column;
+	}
+
+}
+
+input {
+	
+	width:300px;
+	padding: 15px;
+	margin: 5px 0 5px 0;
+	outline: none;
+	
+}
+
+
+@media screen and (max-width:480px) {
+	
+
+	input {
+		
+		height:25px;
+		
+	}
+	
+
+	
+}
+
+
+label {
+
+	font-family: 'Courier New', Courier, monospace;
+	font-size: 17px;
+	margin-bottom: 10px;
+}
+
+#res {
+
+	width: 100%;
+	text-align: center;
+	margin-top: 5%;
+
+}
+
+
+
+#litera {
+	
+	border-bottom:2px solid blue;
+	padding: 10px;
+	margin-top: 5%;
+	
+}
+
+#zona {
+	
+	
+	font-size:35px;
+	color: green;
+	margin-top: 15px;
+	
+}
+
+
+</style>
+
+
+
+
+
+</head>
+<body>
+
+<h1>Alphabet Find Letter</h1>	
+
+<div class="box">
+
+<div class="item">	
+<label> Arata litera de la pozitia ... (1-31) <br>	
+<input type = "text" id="input" placeholder="Scrie aici numarul "><br>
+</label>
+<button  onclick="findLetter()">Show</button>
+</div>
+
+<div class="item">
+<label> Aceasta litera  este a ... <br>	
+<input type = "text" id="inputTwo" placeholder="Scire aici litera "><br>
+</label>
+<button onclick="findLetterpos()">Show</button>
+
+</div>
+
+</div>
+
+
+<div id="res">
+
+ <h1 id="zona">Rezultat:  </h1>	
+
+ <span id="litera"> </span>
+
+</div>
+	
+
+
+<script>
+
+
+
+ function findLetter() {
+	
+	var x = document.getElementById("input").value;
+
+	var y = "#ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+	var z = y.charAt(x);
+
+
+	if(x == 0 ) {
+
+document.getElementById('litera').innerHTML = "Scrieti o valoare mai mare ca 0";
+ 
+   return;
+ 
+   
+}
+
+if(x > 31) {
+
+	document.getElementById('litera').innerHTML = "Scrieti o valoare pana in  31";
+ 
+ return;
+
+
+}
+
+else {
+	
+	document.getElementById('litera').innerHTML = z;
+	
+	document.getElementById('zona').innerHTML = "Litera este:";
+
+}
+
+
+
+}
+	
+function findLetterpos() {
+	
+	var x = document.getElementById("inputTwo").value;
+
+	var y = "#abcdefghijklmnopqrstuvwxyz";
+
+	var z = y.search(x);
+
+	document.getElementById('litera').innerHTML = z;
+	
+	document.getElementById('zona').innerHTML = "Litera este pe pozitia:";
+}
+
+ </script>
+</body>
+
+
+</html>

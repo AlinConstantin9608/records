@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+
+<head>
+
+<title>Corect! </title>
+
+<style>
+
+* {
+
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	
+}
+
+
+body {
+
+	background-color: rgb(224, 221, 221);
+	max-width: 1300px;
+    padding: 4px;
+    margin: 0 auto;
+
+}
+
+
+h1 {
+
+	position: absolute;
+	top: 40%;
+	left: 30%;
+	color: rgb(37, 34, 223);
+	font-size: 90px;
+	font-family: sans-serif;
+	animation-name: alin;
+	animation-duration: 2s;
+	animation-fill-mode: forwards;
+	text-shadow: 5px 5px 5px 5px black;
+}
+
+
+
+
+
+
+@Keyframes alin {
+
+
+	0%{text-shadow: 2px 2px blue;}
+	
+	100% {text-shadow: 2px 2px green;}
+
+}
+
+
+
+#load {
+
+	width: 100%;
+	height: 20px;
+	position: absolute;
+	bottom: 10px;
+	left: 5px;
+	padding: 5px;
+	animation-name: loading;
+	animation-duration: 5s;
+	animation-fill-mode: forwards;
+	background-color: black;
+	border-radius: 10px;
+}
+
+
+@Keyframes loading {
+
+	
+	0% {width:0; background-color:black;}
+
+	10% {width: 20%; background-color: #a01538;}
+
+	30% {width: 40%; background-color: #310417;}
+	
+	100% {width: 98%; background-color: #00FF7F;}
+
+}
+
+
+
+</style>
+
+
+
+
+
+
+
+
+
+</head>
+
+
+<body>
+
+
+	<h1>Hello World</h1>
+<i>...</i>
+
+
+
+
+
+<div id="load"></div>
+
+
+</body>
+
+
+</html>
