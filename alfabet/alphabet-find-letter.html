@@ -20,6 +20,15 @@
 }
 
 
+#back {
+
+	padding: 8px;
+	font-size: 20px;
+	background-color: rgb(202, 191, 191);
+	color: rgb(255, 255, 255);
+	text-decoration: none;
+}
+
 h1 {
 
 	width: 100%;
@@ -113,10 +122,11 @@ label {
 
 #litera {
 	
-	border-bottom:2px solid blue;
-	padding: 10px;
-	margin-top: 5%;
-	
+	border:1px solid rgb(35, 35, 36);
+	padding: 25px;
+	margin-top: 10%;
+	font-size: 20px;
+	font-family: 'Courier New', Courier, monospace;
 }
 
 #zona {
@@ -129,6 +139,14 @@ label {
 }
 
 
+
+#credit {
+
+	position: absolute;
+	bottom: 1%;
+	right: 1%;	
+	font-family: 'Courier New', Courier, monospace;
+}
 </style>
 
 
@@ -138,12 +156,13 @@ label {
 </head>
 <body>
 
+
 <h1>Alphabet Find Letter</h1>	
 
 <div class="box">
 
 <div class="item">	
-<label> Arata litera de la pozitia ... (1-31) <br>	
+<label> Arata litera de la pozitia ... (1-26) <br>	
 <input type = "text" id="input" placeholder="Scrie aici numarul "><br>
 </label>
 <button  onclick="findLetter()">Show</button>
@@ -163,12 +182,13 @@ label {
 <div id="res">
 
  <h1 id="zona">Rezultat:  </h1>	
-
+<br><br>
  <span id="litera"> </span>
 
 </div>
 	
 
+<a id="credit" href="../records.html">&copy; records</a>
 
 <script>
 
@@ -192,9 +212,9 @@ document.getElementById('litera').innerHTML = "Scrieti o valoare mai mare ca 0";
    
 }
 
-if(x > 31) {
+if(x > 26) {
 
-	document.getElementById('litera').innerHTML = "Scrieti o valoare pana in  31";
+	document.getElementById('litera').innerHTML = "Scrieti o valoare pana in  26";
  
  return;
 

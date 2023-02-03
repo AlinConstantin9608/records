@@ -1,0 +1,21 @@
+Version: 1.0;
+Data: 28.01.2023;
+
+
+Note:
+
+- Schimbare din limba Romana in engleza;
+- creare panou lateral cu toate optiunile si codul de culoare;
+-Schimbare fonturi;
+- schimbare aspect butoane;
+- creare clasa butoane;
+
+Viitoare (de reflectat) 
+
+- Ascundere/aratare panou lateral;
+- mutare stang/dreapta panou lateral;
+
+Version: 1.1;
+Data: 29.01.2023;
+
+- Adaugare optiune "edit" pentru a scrie propriul cod HEX;

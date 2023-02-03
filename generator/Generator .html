@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ro-RO">
+<html lang="En-us">
 
 
 <head>
@@ -8,7 +8,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Cache-control" content="no-cache">
-<title> Generator de culori </title>
+<title> Color Picker </title>
+
 
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
@@ -17,49 +18,58 @@
 <style>
 
 
-#app {
+body {
 
-	position:fixed;
-	bottom: 0;
-	padding:20px;
-	font-size:23px;
+	font-family: 'Courier New', Courier, monospace;
+
+}
+
+button {
+	
+	border-radius: 5%;
 	border:none;
-	background:black;
-	color:white;
+	background:rgb(253, 252, 252);
+	padding: 8px;
+	color:rgb(15, 15, 15);
+	font-size: 16px;
 	cursor: pointer;
 }
 
+button:hover {
+
+	border: 1px solid rgba(255, 0, 0, 0.473);
+
+}
+ 
 
 #set {
 
 	position:fixed;
 	right: 0;
 	bottom: 0;
-	padding:15px;
+	padding:10px;
 	font-size:20px;
 	border:none;
-	background:black;
+	background:rgb(13, 13, 14);
 	color:white;
 	cursor: pointer;
 }
 
 
-#setb{
-
-	font-size:23px;
-	background:black;
-	color:white;
-	border: none;
-	cursor: ponter;
-	border: 1px solid transparent ;
+#credit {
+	
+	font-family: 'Courier New', Courier, monospace;
+	color: rgb(255, 255, 255);
+	font-size: 14px;
 }
 
 
-#setb:hover {
+i:hover {
 
-	border: 2px solid transparent;
+	text-decoration: underline;
 
 }
+
 </style>
 
 
@@ -72,21 +82,24 @@
 <body onload="getColor()">
 
 
-
-	<div  id="text" style="text-align:center; font-size:20px; padding: 8px; color:white; background-color:black;" > 
-
-		<!-- aici apare codul de culoare-->
-
-	</div>
-
-
-
-<button id="app" onclick = "getColor()"> Culoare <br> Aleatoare </button>
-
-
 <div id="set">
-<p>Alege: </p><input type="color" id="color" name="color"> </br></br>
-<input type="button" id="setb" onclick="setColor()" value="Aplica">
+
+	
+<h5>HEX CODE: <br><br> <span  id="text"></span><br><br><i onclick="enter()">edit</i></h5>
+
+<h4>Options:</h4>	
+
+
+<button  onclick = "getColor()"> Random <br> Color </button>
+	
+<p>Choose: </p><input type="color" id="color" name="color"> <br><br>
+
+<button  id="setb" onclick="setColor()">Apply</button>
+
+<br>
+
+<a id="credit" href="../records.html">&copy; records</a>
+
 </div>
 
 
@@ -111,7 +124,7 @@ function getColor() {
 
 	document.body.style.background = color;
 
-	document.getElementById('text').innerHTML = "COD CULOARE " + " " + color;	
+	document.getElementById('text').innerHTML =  color;	
 }
 	
 
@@ -123,13 +136,25 @@ function setColor() {
 
 	var x = document.getElementById("color").value;
 	
-	document.getElementById('text').innerHTML = "COD CULOARE " + "  " +  x;
+	document.getElementById('text').innerHTML =   x;
 
 	document.body.style.background = x;
 
 }
 
+function enter() {
 
+	let x = prompt("Enter the your HEX code", "#");
+
+	document.getElementById('text').innerHTML = x;
+
+	document.body.style.background = x;
+
+	if( x == null) {
+
+		document.getElementById('text').innerHTML = "No select";
+	}
+}
 
 
 </script>

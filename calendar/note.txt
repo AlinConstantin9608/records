@@ -1,0 +1,5 @@
+version: 1.0;
+data: 01.02.2023;
+
+- Preluare calendar de la un document mai vechi ;
+- schimbare stil de afisare, fonturi si culori;

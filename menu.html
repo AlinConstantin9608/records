@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<head>
+
+<title>Exemplu de meniu</title>
+
+<style>
+.meniu {
+    position: relative;
+    display: inline-block;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.buton-meniu {
+    background-color: #f52020;
+    font-size: 25px;
+    color: white;
+    border: 1px;
+    border-radius: 5%;
+	
+}
+
+.optiuni-meniu {
+    display: none;
+    position: relative;
+    background-color: #f52020;
+    width: 150px;
+    padding: 5px;
+    box-shadow: 5px 5px 20px grey;
+    border-radius: 5%;
+}
+
+.optiuni-meniu a {
+    color: white;
+    font-family: arial;
+    font-size: 20px;
+    display: block;
+    border-bottom: 1px solid;
+}
+
+.meniu:hover .optiuni-meniu {
+    display: block;
+}
+
+.optiuni-meniu a:hover {
+    background-color: black;
+    padding-left: 10px;
+    transition: background-color 0.5s ease-in;
+}
+
+.buton-meniu:hover {
+    background-color: black;
+    transition: background-color 0.5s ease-in;
+}
+
+.buton-meniu:active {
+    background-color: red;
+}
+
+.optiuni-meniu a:active {
+    background-color: red;
+
+}
+/*markere   */
+
+
+ .categori {
+
+	display:flex;
+	width:auto;
+	height: auto;
+	margin-top:120px;
+	flex-direction:row;
+	flex-wrap:wrap;
+	
+}
+
+
+
+.box {
+	
+	width:130px;
+	height:250px;
+	text-align:center;
+	margin-top:10px;
+	margin-left:20px;
+	transition:0.3s;
+	
+}
+
+.box:hover {
+	
+	box-shadow:2px 2px  2px 2px #FFFFFF;
+	
+	
+	
+}
+
+
+.box p {
+	
+	position:relative;
+	background-color: #A0522D;
+	top:75%;
+	font-size:18px;
+	color:white;
+	font-family:sans-serif;
+	transform: rotate(-35deg);
+}
+
+/* meniu doi */
+
+nav {
+	
+	float: left;
+	background-color:white;
+	margin-top:25px;
+	margin-left:8px;
+	padding:0px;
+}
+
+
+	nav ul {
+	
+	overflow:hidden;
+	padding:0px;
+	margin-left:0px;
+	margin-right:0px;
+	margin-top:0px;
+	background:white;
+	
+}
+
+
+	nav ul li {
+	
+	display:inline-block; 
+	margin:0px;
+	padding:15px 10px 15px;	
+	background-color:#0080ff;
+	
+}
+
+
+	
+	
+	
+
+@media screen and (max-width:480px){
+	
+	nav ul li {
+	
+	display:block;
+	margin-top:0px;
+	padding:5px;
+	font-size:10px;
+	
+	}
+	
+	
+}
+
+</style>
+
+</head>
+
+<body>
+
+    <div class="meniu">
+
+
+        <button class="buton-meniu" title="Meniu"> 	&#9776; </button>
+        
+        <div class="optiuni-meniu">  	<!-- meniu -->
+        
+        <a href="" class="links"	 title="Despre" onclick="intampinare()"		>Despre</a>
+        <a href="" class="links"	title="Contact" onclick="intampinare()" 	>Contact</a>
+        <a href="" class="links" 	title="Produse" onclick="intampinare()"		>Produse</a>
+    
+        </div>
+    </div>    
+</body>
+
+
+<!-- markere -->
+<div class="categori">
+
+    <div class="box" style="background-image:url(imagini/we.jpg)">
+    
+    
+    <p>PRODUSE</p>
+    
+    
+    </div>
+    
+    
+    
+    
+    
+    <div class="box"  style="background-image: url(imagini/p.jpg)">
+    
+    <p title="Cofetarii partenere">COFETARII</p>
+    
+    
+    </div>
+    
+    
+    
+    
+    
+    
+    <div class="box"  style="background-image: url(imagini/j.jpg)">
+    
+    
+    <p  title="Creeaza propriul tau desert">S-MAKER</p>
+    
+    
+    </div>
+    
+    
+    
+    
+    <div class="box" style=" background-image: url(imagini/c5.png)">
+    
+    
+    <p   title="Intra in contact cu noi !"><a href="Despre.html">DESPRE NOI</a></p>
+    
+    
+    </div>
+    
+    </div>
+
+<!-- meniu doi -->
+<nav>
+    <ul>
+    
+       <li id="li2"><a href="index.html" title="Pagina Principala"> ACASA</a></li>
+       <li><a href="" title="Produse" > PRODUSE</a></li>
+       <li><a href="" title="Despre noi" > DESPRE NOI </a></li>
+       <li><a href="" title="Noutati" > NOUTATI</a></li>
+       <li><a href="" title="Contact" > CONTACT</a></li>
+    </ul>
+    
+    </nav>
+</html>
