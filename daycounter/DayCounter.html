@@ -167,6 +167,7 @@ function day() {
 	
 var x = document.getElementById('time').value;
 
+console.log(x);
 
 var end = new Date(x);
 
@@ -185,9 +186,6 @@ var end = new Date(x);
 	
 	
          if(distance <  0) {
-	
-            var distance = now - end;
-		
 		
 			var days = Math.floor(distance / _day);
 
@@ -196,6 +194,7 @@ var end = new Date(x);
 			 document.getElementById('result').innerHTML = "Au trecut:";
 			
 			document.getElementById('show').style.display = "block";	
+
             return;
  
 // .toLocaleString() adauga asta dupa days cand arata minute sau secunde ca sa ai separator; 

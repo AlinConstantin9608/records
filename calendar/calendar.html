@@ -1,168 +1,164 @@
 <!DOCTYPE html>
-<html lang="ro-RO">
+<html>
 
 <head>
 
-  <meta charset="UTF-8">
-  <meta name="author" content="Barbulescu Alin-Constantin"> 
-  <meta http-equiv="Cache-control" content="no-cache">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">   
- <title>Calendar</title>
+    <title>Calendar</title>
 
-<style>
+   <style>
 
+      * {
+
+         margin: 0;
+         padding: 0;
+
+      }      
 
     body {
+       
+       font-family: 'Courier New', Courier, monospace; 
+       
+    }
 
-        font-family: 'Courier New', Courier, monospace;
-        font-size: 16px;
+    #title {
+
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        top: 0;
+        left: 0;
+
     }
 
 
-#calendar_wrap {
-	padding: 20px 25px 20px 5px;
-	margin-top:3px;
-}
-
-#calendar table {
-	width: 100%;
-	background: #FFFFFF;
-	text-align: center;
-}
-
-#calendar thead {
-	background: #006600;
-	color: #FFFFFF;
-    font-size: 16px;
-}
-
-#calendar tbody td {
-	background: #FFFFFF;
-    padding: 17px;
-	border: 1px solid #BCF8FA;
-    border-radius: 5%;
-}
-
-#calendar tbody td:hover {
-
-    background-color: #BCF8FA;
-    cursor: pointer;
-}
-
-#calendar #today {
-	background: #BCF8FA;
-	border: 2px solid #16B1B0;
-	font-weight: bold;
-	color: rgb(17, 17, 17);
-}
+        #calendar {
+            width: calc(100% - 20px);
+            height: 400px;
+            margin: 50px 0 0 10px;
+            text-align: center;
+            border: 2px  solid rgb(17, 99, 37);
+        }
 
 
- #footer button {
+        #calendar .weeks  {
 
-    padding: 8px;
-    background-color: #006600;
-    color: white;
-    font-size: 14px;
-    border-radius: 5%;
-    border: none;
-}
+            font-size: 20px;
+            font-weight: bold;
+            background-color: rgb(17, 99, 37);
+            padding: 2px;
+            color:aliceblue;
+        }
 
-#footer button:hover {
+        #calendar .days {
 
-    background-color:#129712;
-    cursor: pointer;
+            margin-bottom: 20px;
+            font-weight: bold;
 
-}
+        }
+
+
+        #calendar .days li {
+
+            margin-top: 40px; 
+            
+        }
+
+        .days li:hover {
+
+            cursor: pointer;
+            color: green;
+
+        }
+
+
+    #calendar ul {
+
+            display: flex;
+            list-style-type: none;
+            flex-wrap: wrap;
+            
+        }
+
+    #calendar ul li {
+
+        width: calc(100% / 7);
+        position: relative;
+        
+    }    
+
+
+    .inactive {
+
+        color: rgb(190, 189, 189);
+
+    }
+
+    .active {
+
+        
+        color: red;
+        font-size: xx-large;
+        text-decoration: underline;
+    }
+
+    .btn {
+
+          text-align: center;
+          margin-top: 35px;
+          padding: 5px;  
+    }
+
+    .btn button {
+
+        padding: 8px;
+        background-color:rgb(17, 99, 37);
+        color: white;
+        border: none;
+        cursor: pointer;
+        border: 1px solid transparent;
+    }
+
+   
+    .btn button:active {
+
+        border: none;
+
+    }
  
-#credit {
+   </style> 
 
 
-	position: absolute;
-    right: 3%;
-    bottom: 3%;
-	font-family: 'Courier New', Courier, monospace;
-	color: rgb(26, 25, 25);
-	font-size: 14px;
-}
-</style> 
 </head>
-
 <body>
 
-    <li id="calendar">
-        <h2 id="yd">August 2015</h2>
-        <div id="calendar_wrap">
-            <table id="wp-calendar" summary="Calendar">
+ <h1 id="title">Calendar</h1>   
  
- <thead>
-   <tr>
-      <th abbr="Monday" scope="col" title="LUNI">Lu.</th>
-      <th abbr="Tuesday" scope="col" title="MARTI">Ma.</th>
-      <th abbr="Wednesday" scope="col" title="MIERCURI">Mi.</th>
-     <th abbr="Thursday" scope="col" title="JOI">Jo.</th>
-     <th abbr="Friday" scope="col" title="VINERI">Vi.</th>
-   <th abbr="Saturday" scope="col" title="SAMBATA">Sa.</th>
-     <th abbr="Sunday" scope="col" title="DUMINICA">Du.</th>
-   </tr>
- </thead>
+<div id="calendar">
+ <ul class="weeks">
+   <li>Lu.</li> 
+   <li>Ma.</li> 
+   <li>Mi.</li> 
+   <li>jo.</li> 
+   <li>Vi.</li> 
+   <li>Sa.</li> 
+   <li>Du.</li> 
+ </ul>
+ <ul class="days">
+    
+  </ul>
 
-                <tbody>
-                    <tr>
-                        <td colspan="2" class="pad">&nbsp;</td>
-                        <td class="day"></td>
-                        <td class="day"></td>
-                        <td class="day"></td>
-                        <td class="day"></td>
-                        <td class="day"></td>
-                    </tr>
-                    <tr>
-                        <td class="day"></td>
-                        <td class="day"></td>
-                        <td class="day"></td>
-                        <td class="day"></td>
-                        <td class="day"></td>
-                        <td class="day"></td>
-                        <td class="day"></td>
-                    </tr>
-                    <tr>
-                        <td class="day"></td>
-                        <td class="day"></td>
-                        <td class="day"></td>
-                        <td class="day"></td>
-                        <td class="day"></td>
-                        <td class="day"></td>
-                        <td class="day"></td>
-                    </tr>
-                    <tr>
-                        <td class="day"></td>
-                        <td class="day"></td>
-                        <td class="day"></td>
-                        <td class="day"></td>
-                        <td class="day"></td>
-                        <td class="day"></td>
-                        <td class="day"></td>
-                    </tr>
-                    <tr>
-                        <td class="day"></td>
-                        <td class="day"></td>
-                        <td class="day"></td>
-                        <td class="day"></td>
-                        <td class="day"></td>
-                       
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </li>
-    <div id="footer">
-        <button>&#8617; Prev</button>
-        <button>Next &#8618;</button>
-        </div>
+</div>
 
-        <a id="credit" href="../records.html">&copy; records</a> 
+<div class="btn">
+<button id="prev">Prev</button>
+<button id="next" >Next</button>
+</div>
 
-      
-<script  src="calendar.js"> </script>
-</body>
+<input type="date"  id="time">
+<button onclick="goTodate()">go</button>
+<button onclick="goBack()">Back</button>
+
+<script src="calendar.js" defer></script>
+</body>  
 
 </html>
