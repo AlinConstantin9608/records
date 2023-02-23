@@ -1,0 +1,159 @@
+
+* {
+
+    margin: 0;
+    padding: 0;
+   --background: rgb(10, 29, 16);
+  
+ }      
+
+body {
+  
+  font-family: 'Courier New', Courier, monospace; 
+  background-color: whitesmoke;
+}
+
+button {
+                  /* clasa butoane */
+
+   padding: 8px;
+   background-color:var(--background);
+   color: white;
+   cursor: pointer;
+   border: 1px solid transparent;
+   font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+button:active {
+
+   border: none;
+}
+
+button:hover {
+
+   background-color:rgb(8, 128, 38);
+
+}
+
+#title {
+
+   color: white;
+   width: auto;
+}
+
+
+   #calendar {
+       width: calc(100% - 20px);
+      height: 430px;
+       margin: 10px 0 0 10px;
+       text-align: center;
+       background-color: var(--background);
+       color: white;
+       padding-bottom: 8px;
+      box-shadow: 2px 2px 2px grey;
+      border-radius: 4px;
+   }
+
+
+   #calendar .weeks  {
+
+       font-size: 25px;
+       font-weight: bold;
+       background-color: rgb(48, 161, 77);
+       padding: 2px;
+       color:aliceblue;
+   }
+
+   #calendar .days {
+
+       margin-bottom: 22px;
+       font-weight: bold;
+      
+       
+   }
+   #calendar .days li {
+
+       margin-top: 40px; 
+     
+       
+   }
+
+   .days li:hover {
+
+       cursor: pointer;
+      text-decoration: underline;
+
+   }
+
+
+#calendar ul {
+
+       display: flex;
+       list-style-type: none;
+       flex-wrap: wrap;
+       
+   }
+
+#calendar ul li {
+
+   width: calc(100% / 7);
+   position: relative;
+  
+}    
+
+
+.inactive {
+
+   color: #c8c8c8;
+
+}
+
+.active {
+
+   color: red;
+   font-size: xx-large;
+   text-decoration: underline;
+}
+
+
+.btn {
+
+      position: absolute;
+      bottom: 5px;
+      right: 5px;
+      border: 2px solid var(--background);
+      background-color: var(--background); 
+      border-radius: 3px;
+}
+
+#prev {
+
+   border-right: 1px solid rgb(49, 49, 49);
+}
+
+.cmd {
+
+   position: absolute;
+   bottom: 5px;
+   left: 5px;
+   display: block;
+  width: auto;
+  font-weight: 300;
+  font-size: 17px;
+}
+
+
+.cmd input {
+
+   background-color: var(--background);
+   color: white;
+   border: none;
+   padding: 8px;
+   cursor: pointer;
+
+}
+
+#reset {
+
+   visibility: hidden;
+}

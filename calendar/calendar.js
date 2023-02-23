@@ -26,7 +26,7 @@ let lastDayofMounth = new Date (Cyear,Cmounth,lastDateofLastMounth).getDay();
 
 for (let i = firstDateofMounth; i > 0; i-- ) {
 
-    liTag += `<li class="inactive">${lastDateofLastMounth -i +1}</li>`;
+    liTag += `<li class="inactive" title="Zi a lunii anterioare">${lastDateofLastMounth -i +1}</li>`;
 
 }
 
@@ -44,7 +44,7 @@ for(let i = 1; i<= lastDateofMounth; i++) {
 
 for (let i = lastDayofMounth; i < 6; i++) {
 
-    liTag += `<li class="inactive">${ i - lastDayofMounth +1}</li>`;
+    liTag += `<li class="inactive" title="Zi a lunii viitoare">${ i - lastDayofMounth +1}</li>`;
 }
 
 days.innerHTML = liTag;
@@ -88,12 +88,22 @@ function goTodate() {
     Cyear = y.getFullYear();
     Cmounth =y.getMonth(); 
 
+    if(y == NaN) {
+
+        alert('Va rugam alegeti o data');
+    }
+
     calendar();
 
     document.getElementById("title").innerHTML =  months[Cmounth] + "  " +  Cyear  ;
 
-    
+    document.getElementById('reset').style.visibility = 'visible';
    
 }
 
-goBack = () => location.reload();
+function goBack() {
+
+    location.reload();
+
+
+}
